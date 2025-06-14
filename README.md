@@ -1,1 +1,131 @@
-# k8s-microservices-project
+# Kubernetes Cluster Security Hardening: Google Microservices Demo
+
+## 1. Introduction
+
+This document provides a comprehensive overview of the Kubernetes cluster configuration, the deployment of the Google Microservices Demo application, and the specific security hardening measures that have been implemented. The goal is to maintain a secure, stable, and well-documented environment following the principle of defense-in-depth.
+
+This repository contains the necessary manifests and configuration files to replicate this environment.
+
+---
+
+## Table of Contents
+
+1.  [Introduction](#1-introduction)
+2.  [Cluster Overview](#2-cluster-overview)
+3.  [Application Deployment: Google Microservices Demo](#3-application-deployment-google-microservices-demo)
+4.  [**Security Hardening Measures**](#4-security-hardening-measures)
+    - [4.1 CIS Kubernetes Benchmark](#41-cis-kubernetes-benchmark)
+    - [4.2 Pod Security Standards (PSS)](#42-pod-security-standards-pss)
+    - [4.3 Network Security & Policies](#43-network-security--policies)
+    - [4.4 Role-Based Access Control (RBAC)](#44-role-based-access-control-rbac)
+    - [4.5 Secrets Management](#45-secrets-management)
+    - [4.6 Container Image Security](#46-container-image-security)
+    - [4.7 Runtime Security](#47-runtime-security)
+    - [4.8 Logging and Auditing](#48-logging-and-auditing)
+    - [4.9 Node-Level Hardening](#49-node-level-hardening)
+5.  [How to Deploy / Recreate](#6-how-to-deploy--recreate)
+
+---
+
+## 2. Cluster Overview
+
+This section details the foundational infrastructure of our Kubernetes cluster.
+
+| Attribute              | Value                             | Notes                                                        |
+| ---------------------- | --------------------------------- | ------------------------------------------------------------ |
+| **Kubernetes Version** |     |                                                              |
+| **Hypervisor OS**      | Fedora 42 (Server Edition)        |                                                              |
+| **Node OS**            | Ubuntu 22.04.5 LTS                |                              |
+| **Number of Nodes**    | 3 nodes: 1 Controller, 2 Workers  |                                                              |
+| **CNI Plugin**         | alico|  |
+
+| Component | Hostname   | OS                         | Rola          |
+| --------- | ---------- | -------------------------- | ------------- |
+| Host      | hypervisor | Fedora 42 (Server Edition) | Hypervisor    |
+| VM 1      | sm-c0      | Ubuntu 22.04.5 LTS         | Control Plane |
+| VM 2      | sm-w0      | Ubuntu 22.04.5 LTS         | Worker Node   |
+| VM 3      | sm-w1      | Ubuntu 22.04.5 LTS         | Worker Node   |
+
+---
+
+## 3. Application Deployment: Google Microservices Demo
+
+The cluster hosts the [Google Microservices Demo](https://github.com/GoogleCloudPlatform/microservices-demo), a sample cloud-native application.
+
+*   **Deployment Method**: Deployed using kubectl apply -f ./release/kubernetes-manifests.yaml
+*   **Namespace**: The application is deployed in the default namespace
+
+
+---
+
+## 4. Security Hardening Measures
+
+The following security controls have been implemented across the cluster.
+
+### 4.1 CIS Kubernetes Benchmark /TODO/
+
+### 4.2 Pod Security Standards (PSS) /TO DO/
+
+### 4.3 Network Security & Policies /TO UPDATE/
+
+### 4.4 Role-Based Access Control (RBAC) /TODO/
+
+### 4.5 Secrets Management /TODO/
+
+### 4.6 Container Image Security /TODO/
+
+### 4.7 Runtime Security /TODO/
+
+### 4.8 Logging and Auditing /TO UPDATE/
+
+### 4.9 Node-Level Hardening /TODO/
+
+
+---
+
+## 5. How to Deploy / Recreate
+
+Follow these steps to set up a similar environment.
+
+### Prerequisites
+
+*   AMD64 VMs with Unix OS, at least 1 Controller and 1 Worker
+* Ansible with XXXXXXXXX version 
+### Deployment Steps
+
+1.  **Node preparation**:
+    Go to each pod and run ansible initialization task on it, prepare inventory file based on your infrastructure 
+    ```bash
+	ansible-playbook -i inventory.ini initial_configuration.yaml
+    ```
+2.  **Initialize kubernetes cluster**:
+    ```bash
+    # On Controller
+    sudo kubeadm init --pod-network-cidr=<own_cidr>
+    mkdir -p $HOME/.kube
+	sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+	sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    
+    # On Workers:
+    # Run join commands based on kubeadm init output  
+    ```
+3. **Apply CNI on controller**
+   ```bash
+	kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
+    ```
+5. **Deploy Application**:
+    ```bash
+    # Navigate to the manifests directory
+    cd microservices-demo/
+    kubectl apply -f ./release/kubernetes-manifests.yaml
+    ```
+6.  **Apply Security Policies**:
+    ```bash
+    kubectl apply -f ./network-policies/
+    ```
+7.  **Apply RBAC /IN PROGRESS/:
+    ```bash
+    kubectl apply -f ./RBAC/
+    ```
+---
+
