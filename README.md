@@ -2,11 +2,6 @@
 
 ## 1. Introduction
 
-This document provides a comprehensive overview of the Kubernetes cluster configuration, the deployment of the Google Microservices Demo application, and the specific security hardening measures that have been implemented.
-
-This repository contains the necessary manifests and configuration files to replicate this environment.
-
----
 
 ## Table of Contents
 
@@ -29,7 +24,7 @@ This repository contains the necessary manifests and configuration files to repl
 
 ## 2. Cluster Overview
 
-This section details the foundational infrastructure of our Kubernetes cluster.
+This section details infrastructure of Kubernetes cluster.
 
 | Attribute              | Value                             | Notes                                                        |
 | ---------------------- | --------------------------------- | ------------------------------------------------------------ |
