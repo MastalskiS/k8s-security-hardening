@@ -23,7 +23,7 @@
 ---
 
 ## 2. Cluster Overview
-![Architecture](k8s-microservices-project/blob/main/k8s.drawio.png)
+![Architecture](k8s.drawio.png)
 This section details infrastructure of Kubernetes cluster.
 
 | Attribute              | Value                             | Notes                                                        |
