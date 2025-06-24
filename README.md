@@ -16,8 +16,7 @@
     - [4.5 Secrets Management](#45-secrets-management)
     - [4.6 Container Image Security](#46-container-image-security)
     - [4.7 Runtime Security](#47-runtime-security)
-    - [4.8 Logging and Auditing](#48-logging-and-auditing)
-    - [4.9 Node-Level Hardening](#49-node-level-hardening)
+
 5.  [How to Deploy / Recreate](#6-how-to-deploy--recreate)
 
 ---
@@ -50,9 +49,7 @@ This section details infrastructure of Kubernetes cluster.
 The cluster hosts the [Google Microservices Demo](https://github.com/GoogleCloudPlatform/microservices-demo), a sample cloud-native application.
 
 *   **Deployment Method**: Deployed using kubectl apply -f ./release/kubernetes-manifests.yaml
-*   **Namespace**: The application is deployed in the default namespace
-
-
+*   **Namespace**: The application is deployed in the **default** namespace
 ---
 
 ## 4. Security Hardening Measures
@@ -73,20 +70,14 @@ The following security controls have been implemented across the cluster.
 
 ### 4.7 Runtime Security /TODO/
 
-### 4.8 Logging and Auditing /TO UPDATE/
-
-### 4.9 Node-Level Hardening /TODO/
-
-
 ---
 
-## 5. How to Deploy / Recreate
+## 5. How to Deploy 
 
-Follow these steps to set up a similar environment.
 
 ### Prerequisites
 
-*   AMD64 VMs with Unix OS, at least 1 Controller and 1 Worker
+* AMD64 VMs with Unix OS, at least 1 Controller and 1 Worker
 * Ansible with XXXXXXXXX version 
 ### Deployment Steps
 
