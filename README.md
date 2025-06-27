@@ -29,13 +29,12 @@ This section details infrastructure of Kubernetes cluster.
 
 | Attribute              | Value                             | Notes                                                        |
 | ---------------------- | --------------------------------- | ------------------------------------------------------------ |
-| **Kubernetes Version** |     |                                                              |
 | **Hypervisor OS**      | Fedora 42 (Server Edition)        |                                                              |
 | **Node OS**            | Ubuntu 22.04.5 LTS                |                              |
 | **Number of Nodes**    | 3 nodes: 1 Controller, 2 Workers  |                                                              |
 | **CNI Plugin**         | alico|  |
 
-| Component | Hostname   | OS                         | Rola          |
+| Component | Hostname   | OS                         | Role          |
 | --------- | ---------- | -------------------------- | ------------- |
 | Host      | hypervisor | Fedora 42 (Server Edition) | Hypervisor    |
 | VM 1      | sm-c0      | Ubuntu 22.04.5 LTS         | Control Plane |
