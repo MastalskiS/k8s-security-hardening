@@ -9,13 +9,10 @@
 2.  [Cluster Overview](#2-cluster-overview)
 3.  [Application Deployment: Google Microservices Demo](#3-application-deployment-google-microservices-demo)
 4.  [**Security Hardening Measures**](#4-security-hardening-measures)
-    - [4.1 CIS Kubernetes Benchmark](#41-cis-kubernetes-benchmark)
-    - [4.2 Pod Security Standards (PSS)](#42-pod-security-standards-pss)
-    - [4.3 Network Security & Policies](#43-network-security--policies)
-    - [4.4 Role-Based Access Control (RBAC)](#44-role-based-access-control-rbac)
-    - [4.5 Secrets Management](#45-secrets-management)
-    - [4.6 Container Image Security](#46-container-image-security)
-    - [4.7 Runtime Security](#47-runtime-security)
+    - [4.1 Network Security & Policies](#43-network-security--policies)
+    - [4.2 Role-Based Access Control (RBAC)](#44-role-based-access-control-rbac)
+    - [4.3 Secrets Management](#45-secrets-management)
+    - [4.4 Container Image Security](#46-container-image-security)
 
 5.  [How to Deploy / Recreate](#6-how-to-deploy--recreate)
 
@@ -55,19 +52,13 @@ The cluster hosts the [Google Microservices Demo](https://github.com/GoogleCloud
 
 The following security controls have been implemented across the cluster.
 
-### 4.1 CIS Kubernetes Benchmark /TODO/
+### 4.1 Network Security & Policies /TODO/
 
-### 4.2 Pod Security Standards (PSS) /TO DO/
+### 4.2 Role-Based Access Control (RBAC) /TODO/
 
-### 4.3 Network Security & Policies /TO UPDATE/
+### 4.3 Secrets Management /TODO/
 
-### 4.4 Role-Based Access Control (RBAC) /TODO/
-
-### 4.5 Secrets Management /TODO/
-
-### 4.6 Container Image Security /TODO/
-
-### 4.7 Runtime Security /TODO/
+### 4.4 Container Image Security /TODO/
 
 ---
 
