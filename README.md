@@ -56,7 +56,13 @@ The following security controls have been implemented across the cluster.
 
 ### 4.2 Role-Based Access Control (RBAC) /TODO/
 
-### 4.3 Secrets Management /TODO/
+### 4.3 Pod Security Context Hardening
+Strict security rules have been applied in Pod Security Context all application pods using a Kustomize patch. This ensures that applications run safely and with limited permissions. The main rules are:
+- **`runAsNonRoot: true` & `runAsUser: 1001`** Containers are prevented from running as the "root" user. A standard, less priviliged user account (ID 1001) is used instead.
+- *`readOnlyRootFilesystem: true`** The main file system inside each container is set to "read-only." This stops any unauthorized changes to important application files.
+- **`allowPrivilegeEscalation: false`** -The ability for a process to gain more permissions than it started with has been disabled.
+- **`capabilities: drop: ["ALL"]`**  Removes all Linux capabilities, significantly reducing the kernel-level attack surface. Processes uses only the minimal set of capabilities needed to run.
+- **`seccompProfile: { type: RuntimeDefault }`**: Applies the default secure computing (seccomp) profile of the container runtime, which blocks potentially dangerous syscalls.
 
 ### 4.4 Container Image Security /TODO/
 
