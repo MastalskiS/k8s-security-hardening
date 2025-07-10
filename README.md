@@ -9,9 +9,9 @@
 2.  [Cluster Overview](#2-cluster-overview)
 3.  [Application Deployment: Google Microservices Demo](#3-application-deployment-google-microservices-demo)
 4.  [**Security Hardening Measures**](#4-security-hardening-measures)
-    - [4.1 Network Security & Policies](#43-network-security--policies)
-    - [4.2 Role-Based Access Control (RBAC)](#44-role-based-access-control-rbac)
-    - [4.3 Pod Security Context Hardening](#45-pod-security-context-hardening)
+    - [4.1 Network Security & Policies]
+    - [4.2 Role-Based Access Control (RBAC)]
+    - [4.3 Pod Security Context Hardening]
 5.  [How to Deploy / Recreate](#6-how-to-deploy--recreate)
 
 ---
@@ -71,7 +71,6 @@ Strict security rules have been applied in Pod Security Context all application 
 - **`capabilities: drop: ["ALL"]`**  Removes all Linux capabilities, significantly reducing the kernel-level attack surface. Processes uses only the minimal set of capabilities needed to run.
 - **`seccompProfile: { type: RuntimeDefault }`**: Applies the default secure computing (seccomp) profile of the container runtime, which blocks potentially dangerous syscalls.
 
-### 4.4 Container Image Security /TODO/
 
 ---
 
