@@ -81,7 +81,6 @@ Strict security rules have been applied in Pod Security Context all application 
 ### Prerequisites
 
 * AMD64 VMs with Unix OS, at least 1 Controller and 1 Worker
-* Ansible with XXXXXXXXX version 
 ### Deployment Steps
 
 1.  **Node preparation**:
