@@ -11,9 +11,7 @@
 4.  [**Security Hardening Measures**](#4-security-hardening-measures)
     - [4.1 Network Security & Policies](#43-network-security--policies)
     - [4.2 Role-Based Access Control (RBAC)](#44-role-based-access-control-rbac)
-    - [4.3 Secrets Management](#45-secrets-management)
-    - [4.4 Container Image Security](#46-container-image-security)
-
+    - [4.3 Pod Security Context Hardening](#45-pod-security-context-hardening)
 5.  [How to Deploy / Recreate](#6-how-to-deploy--recreate)
 
 ---
