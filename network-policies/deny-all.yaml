@@ -1,4 +1,3 @@
-#Domyślna blokada ingress i egress na całym klastrze
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:

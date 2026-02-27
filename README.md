@@ -27,7 +27,7 @@ This section details infrastructure of Kubernetes cluster.
 | **Hypervisor OS**      | Fedora 42 (Server Edition)        |                                                              |
 | **Node OS**            | Ubuntu 22.04.5 LTS                |                              |
 | **Number of Nodes**    | 3 nodes: 1 Controller, 2 Workers  |                                                              |
-| **CNI Plugin**         | alico|  |
+| **CNI Plugin**         | Calico |  |
 
 | Component | Hostname   | OS                         | Role          |
 | --------- | ---------- | -------------------------- | ------------- |
@@ -102,17 +102,17 @@ Strict security rules have been applied in Pod Security Context all application 
    ```bash
 	kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
     ```
-5. **Deploy Application**:
+4. **Deploy Application**:
     ```bash
     # Navigate to the manifests directory
     cd microservices-demo/
     kubectl apply -f ./release/kubernetes-manifests.yaml
     ```
-6.  **Apply Security Policies**:
+5.  **Apply Security Policies**:
     ```bash
     kubectl apply -f ./network-policies/
     ```
-7.  **Apply RBAC /IN PROGRESS/:
+6.  **Apply RBAC**:
     ```bash
     kubectl apply -f ./RBAC/
     ```

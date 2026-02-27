@@ -1,0 +1,48 @@
+{"level":"info","ts":"2026-02-25T18:43:05Z","msg":"Kubescape scanner initializing..."}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Initialized scanner"}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Loading policies..."}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Loaded policies"}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Loading exceptions..."}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Loaded exceptions"}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Loading account configurations..."}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Loaded account configurations"}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Accessing Kubernetes objects..."}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Accessed Kubernetes objects"}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Scanning","Cluster":"kubernetes-admin-kubernetes"}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Done scanning","Cluster":"kubernetes-admin-kubernetes"}
+{"level":"info","ts":"2026-02-25T18:43:07Z","msg":"Done aggregating results"}
+
+
+──────────────────────────────────────────────────
+
+
+
+╭─────────────────┬───╮
+│        Controls │ 4 │
+│          Passed │ 3 │
+│          Failed │ 0 │
+│ Action Required │ 1 │
+╰─────────────────┴───╯
+
+Failed resources by severity:
+
+╭──────────┬───╮
+│ Critical │ 0 │
+│     High │ 0 │
+│   Medium │ 0 │
+│      Low │ 0 │
+╰──────────┴───╯
+
+╭──────────┬───────────────────────────────────────────────────────┬──────────────────┬───────────────┬───────────────────╮
+│ Severity │ Control name                                          │ Failed resources │ All Resources │ Compliance score  │
+├──────────┼───────────────────────────────────────────────────────┼──────────────────┼───────────────┼───────────────────┤
+│  Medium  │ Cluster internal networking                           │         0        │       0       │        100%       │
+│  Medium  │ Ensure that the CNI in use supports Network Polici... │         0        │       0       │ Action Required * │
+│  Medium  │ Ensure that all Namespaces have Network Policies d... │         0        │       0       │        100%       │
+│  Medium  │ Missing network policy                                │         0        │       25      │        100%       │
+├──────────┼───────────────────────────────────────────────────────┼──────────────────┼───────────────┼───────────────────┤
+│          │                    Resource Summary                   │         0        │       25      │       75.00%      │
+╰──────────┴───────────────────────────────────────────────────────┴──────────────────┴───────────────┴───────────────────╯
+
+🚨 * This control is scanned exclusively by the Kubescape operator, not the Kubescape CLI. Install the Kubescape operator:
+     https://kubescape.io/docs/install-operator/.

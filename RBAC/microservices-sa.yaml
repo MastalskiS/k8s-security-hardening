@@ -1,5 +1,3 @@
-#Definicje Service Accout dla każdego serwisu, z uwagi na to, że żaden z nich nie musi łączyć
-#się z API K8s mają nie tworzymy dla nich Roles i role-binding, by minimalozowac ich uprawnienia
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -60,18 +58,3 @@ kind: ServiceAccount
 metadata:
   name: adservice-sa
   namespace: default
-
-
-
-# # Patch ze zmianami
-# NAMESPACE=default
-# kubectl patch deployment frontend -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"frontend-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment cartservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"cartservice-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment productcatalogservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"productcatalogservice-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment currencyservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"currencyservice-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment paymentservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"paymentservice-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment shippingservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"shippingservice-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment emailservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"emailservice-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment checkoutservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"checkoutservice-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment recommendationservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"recommendationservice-sa", "automountServiceAccountToken":false}}}}'
-# kubectl patch deployment adservice -n $NAMESPACE --patch '{"spec":{"template":{"spec":{"serviceAccountName":"adservice-sa", "automountServiceAccountToken":false}}}}'

@@ -7,9 +7,14 @@ spec:
     spec:
       securityContext:
         fsGroup: 1001
-      
+        fsGroupChangePolicy: Always
+        runAsNonRoot: true
+        runAsUser: 1001
+        runAsGroup: 1001
+        seccompProfile:
+          type: RuntimeDefault
       containers:
-      - name: placeholder
+      - name: server
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
@@ -20,5 +25,5 @@ spec:
           runAsNonRoot: true
           runAsUser: 1001
           runAsGroup: 1001
-          seccompProfile:
-            type: RuntimeDefault
+          seLinuxOptions:
+            level: "s0"

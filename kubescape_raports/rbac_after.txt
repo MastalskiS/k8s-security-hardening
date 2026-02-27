@@ -1,0 +1,46 @@
+{"level":"info","ts":"2026-02-25T18:42:53Z","msg":"Kubescape scanner initializing..."}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Initialized scanner"}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Loading policies..."}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Loaded policies"}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Loading exceptions..."}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Loaded exceptions"}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Loading account configurations..."}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Loaded account configurations"}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Accessing Kubernetes objects..."}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Accessed Kubernetes objects"}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Scanning","Cluster":"kubernetes-admin-kubernetes"}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Done scanning","Cluster":"kubernetes-admin-kubernetes"}
+{"level":"info","ts":"2026-02-25T18:42:55Z","msg":"Done aggregating results"}
+
+
+──────────────────────────────────────────────────
+
+
+
+╭─────────────────┬───╮
+│        Controls │ 3 │
+│          Passed │ 2 │
+│          Failed │ 0 │
+│ Action Required │ 1 │
+╰─────────────────┴───╯
+
+Failed resources by severity:
+
+╭──────────┬───╮
+│ Critical │ 0 │
+│     High │ 0 │
+│   Medium │ 0 │
+│      Low │ 0 │
+╰──────────┴───╯
+
+╭──────────┬───────────────────────────────────────────────────────┬──────────────────┬───────────────┬───────────────────╮
+│ Severity │ Control name                                          │ Failed resources │ All Resources │ Compliance score  │
+├──────────┼───────────────────────────────────────────────────────┼──────────────────┼───────────────┼───────────────────┤
+│   High   │ RBAC enabled                                          │         0        │       0       │ Action Required * │
+│   High   │ Ensure that the API Server --authorization-mode ar... │         0        │       0       │        100%       │
+│  Medium  │ Roles with delete capabilities                        │         0        │       0       │        100%       │
+├──────────┼───────────────────────────────────────────────────────┼──────────────────┼───────────────┼───────────────────┤
+│          │                    Resource Summary                   │         0        │       0       │       66.67%      │
+╰──────────┴───────────────────────────────────────────────────────┴──────────────────┴───────────────┴───────────────────╯
+
+🚨 * failed to get cloud provider, cluster: kubernetes-admin-kubernetes

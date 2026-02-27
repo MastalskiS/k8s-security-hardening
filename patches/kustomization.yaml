@@ -1,24 +1,124 @@
-
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
   - adservice.yaml
   - cartservice.yaml
+  - redis-cart.yaml
   - checkoutservice.yaml
   - currencyservice.yaml
   - emailservice.yaml
   - frontend.yaml
-  - frontend-external.yaml
-  - loadgenerator.yaml
   - paymentservice.yaml
   - productcatalogservice.yaml
   - recommendationservice.yaml
   - shippingservice.yaml
 
 patches:
-  - path: security-context-patch
+  - path: security-context-patch.yaml
     target:
       group: apps
       version: v1
       kind: Deployment
+      name: "adservice|cartservice|checkoutservice|currencyservice|emailservice|frontend|paymentservice|productcatalogservice|recommendationservice|shippingservice"
+  - path: security-context-redis.yaml
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: frontend
+      spec:
+        template:
+          spec:
+            serviceAccountName: frontend-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: cartservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: cartservice-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: productcatalogservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: productcatalogservice-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: currencyservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: currencyservice-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: paymentservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: paymentservice-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: shippingservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: shippingservice-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: emailservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: emailservice-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: checkoutservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: checkoutservice-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: recommendationservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: recommendationservice-sa
+            automountServiceAccountToken: false
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: adservice
+      spec:
+        template:
+          spec:
+            serviceAccountName: adservice-sa
+            automountServiceAccountToken: false
