@@ -9,7 +9,6 @@ spec:
       app: emailservice
   policyTypes:
   - Ingress
-
   ingress:
   - from:
     - podSelector: {matchLabels: {app: checkoutservice}}

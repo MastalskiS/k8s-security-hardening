@@ -1,0 +1,51 @@
+{"level":"info","ts":"2026-02-25T18:41:13Z","msg":"Kubescape scanner initializing..."}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Initialized scanner"}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Loading policies..."}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Loaded policies"}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Loading exceptions..."}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Loaded exceptions"}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Loading account configurations..."}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Loaded account configurations"}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Accessing Kubernetes objects..."}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Accessed Kubernetes objects"}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Scanning","Cluster":"kubernetes-admin-kubernetes"}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Done scanning","Cluster":"kubernetes-admin-kubernetes"}
+{"level":"info","ts":"2026-02-25T18:41:15Z","msg":"Done aggregating results"}
+
+
+──────────────────────────────────────────────────
+
+
+
+╭─────────────────┬───╮
+│        Controls │ 9 │
+│          Passed │ 9 │
+│          Failed │ 0 │
+│ Action Required │ 0 │
+╰─────────────────┴───╯
+
+Failed resources by severity:
+
+╭──────────┬───╮
+│ Critical │ 0 │
+│     High │ 0 │
+│   Medium │ 0 │
+│      Low │ 0 │
+╰──────────┴───╯
+
+╭──────────┬───────────────────────────────────────────────────────┬──────────────────┬───────────────┬──────────────────╮
+│ Severity │ Control name                                          │ Failed resources │ All Resources │ Compliance score │
+├──────────┼───────────────────────────────────────────────────────┼──────────────────┼───────────────┼──────────────────┤
+│   High   │ Insecure capabilities                                 │         0        │       11      │       100%       │
+│   High   │ Privileged container                                  │         0        │       11      │       100%       │
+│   High   │ Apply Security Context to Your Pods and Containers    │         0        │       11      │       100%       │
+│  Medium  │ Non-root containers                                   │         0        │       11      │       100%       │
+│  Medium  │ Minimize the admission of containers with allowPri... │         0        │       0       │       100%       │
+│  Medium  │ Minimize the admission of root containers             │         0        │       0       │       100%       │
+│  Medium  │ Minimize the admission of containers with the NET_... │         0        │       0       │       100%       │
+│  Medium  │ Minimize the admission of containers with added ca... │         0        │       0       │       100%       │
+│  Medium  │ Ensure that the seccomp profile is set to docker/d... │         0        │       11      │       100%       │
+├──────────┼───────────────────────────────────────────────────────┼──────────────────┼───────────────┼──────────────────┤
+│          │                    Resource Summary                   │         0        │       11      │      100.00%     │
+╰──────────┴───────────────────────────────────────────────────────┴──────────────────┴───────────────┴──────────────────╯
+

@@ -1,4 +1,4 @@
-#Polityka dla frontendu, umożliwiająca ruch do wybranych podow oraz orgraniczająca ruch do podow frontendowego
+# Polityka dla frontendu, umożliwiająca ruch do wybranych podów oraz ograniczająca ruch do podów frontendowego
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -13,13 +13,6 @@ spec:
   - Egress
   ingress:
   - ports:
-    - protocol: TCP
-      port: 8080
-  - from:
-    - podSelector:
-        matchLabels:
-          app: loadgenerator
-    ports:
     - protocol: TCP
       port: 8080
   egress:
