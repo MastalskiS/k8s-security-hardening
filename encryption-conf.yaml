@@ -8,4 +8,5 @@ resources:
           keys:
             - name: key1
               secret: <key_placeholder>
-     - identity: {}
+      - identity: {}
+

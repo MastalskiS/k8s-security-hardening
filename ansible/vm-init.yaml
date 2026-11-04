@@ -28,8 +28,8 @@
     - name: Disable swap on boot
       ansible.builtin.lineinfile:
         path: /etc/fstab
-        regexp: '^\s*.*?\s+swap\s'
-        line: '# \g<0>'
+        regexp: '^(\s*[^#\n\r]+?\s+swap\s+.*)$'
+        line: '# \g<1>'
         backrefs: true
 
     - name: Ensure kernel modules are loaded on boot
