@@ -2,6 +2,7 @@
 
 ## 1. Introduction
 
+This project serves as the practical implementation for a Master's thesis titled **"Analysis and Implementation of Security Hardening Mechanisms for a Kubernetes Cluster"** (*"Analiza i implementacja mechanizmów Security Hardeningu klastra Kubernetes"*). It focuses on practical hardening techniques across multi-tier cloud-native environments - including node provisioning with Ansible, Pod Security Context enforcement, zero-trust Network Policies, and Role-Based Access Control (RBAC) - evaluated against the Google Cloud Microservices Demo.
 
 ## Table of Contents
 
